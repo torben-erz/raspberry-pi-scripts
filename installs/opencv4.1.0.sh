@@ -52,13 +52,15 @@ rm opencv_contrib.zip
 
 # Compile OpenCV
 cd ~/opencv-4.1.0/
-create_clean_directory build -d
+if [ build ]; then
+    rm -rf build
+fi
 cd build
-#cmake -D CMAKE_BUILD_TYPE=RELEASE /
-# -D CMAKE_INSTALL_PREFIX=/usr/local /
-# -D INSTALL_PYTHON_EXAMPLES=ON /
-# -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-4.1.0/modules /
-# -D BUILD_EXAMPLES=ON ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE /
+ -D CMAKE_INSTALL_PREFIX=/usr/local /
+ -D INSTALL_PYTHON_EXAMPLES=ON /
+ -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-4.1.0/modules /
+ -D BUILD_EXAMPLES=ON ..
 
 # Build OPENCV
 #make -j4
