@@ -15,14 +15,31 @@ sudo apt-get install libatlas-base-dev gfortran -y
 # Install Paython3, pip3 and numpy
 wget https://raw.githubusercontent.com/torben-erz/raspberry-pi-scripts/master/installs/python3.sh
 sh python3.sh
+rm python3.sh
 
 # Get OpenCV 4.1.0 source code
 wget https://github.com/opencv/opencv/archive/4.1.0.zip -O opencv.zip
 unzip opencv.zip
+rm opencv.zip
 wget https://github.com/opencv/opencv_contrib/archive/4.1.0.zip -O opencv_contrib.zip
 unzip opencv_contrib.zip
+rm opencv_contrib.zip
 
 # Compile OpenCV
 cd ~/opencv-4.1.0/
 mkdir build
 cd build
+cmake -D CMAKE_BUILD_TYPE=RELEASE /
+ -D CMAKE_INSTALL_PREFIX=/usr/local
+ -D INSTALL_PYTHON_EXAMPLES=ON /
+ -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-4.1.0/modules /
+ -D BUILD_EXAMPLES=ON ..
+
+# Build OPENCV
+make -j4
+
+# Install OpenCV
+sudo maje install
+sudo ldconfig
+
+echo "Install of OpenCV 4.1.0 successful - Please reboot the system!"
