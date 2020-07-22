@@ -2,7 +2,7 @@
 
 echo ""
 echo "================================"
-echo "Welcome to Toverland-Pi Installation Script for Raspbian"
+echo "Welcome to Installation Script for Raspbian"
 echo "Maintained by Torben Daniel Erz (torben.erz@gmail.com)"
 echo ""
 
