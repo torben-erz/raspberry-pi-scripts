@@ -20,21 +20,22 @@ sh python3.sh
 rm python3.sh
 
 # Get OpenCV 4.1.0 source code
-wget https://github.com/opencv/opencv/archive/4.1.0.zip -O opencv.zip
-if [ opencv-4.1.0 ]; then
-    rm -rf opencv-4.1.0
+version="4.1.0"
+wget https://github.com/opencv/opencv/archive/$version.zip -O opencv.zip
+if [ opencv-$version ]; then
+    rm -rf opencv-$version
 fi
 unzip opencv.zip
 rm opencv.zip
-wget https://github.com/opencv/opencv_contrib/archive/4.1.0.zip -O opencv_contrib.zip
-if [ opencv_contrib-4.1.0 ]; then
-    rm -rf opencv_contrib-4.1.0
+wget https://github.com/opencv/opencv_contrib/archive/$version.zip -O opencv_contrib.zip
+if [ opencv_contrib-$version ]; then
+    rm -rf opencv_contrib-$version
 fi
 unzip opencv_contrib.zip
 rm opencv_contrib.zip
 
 # Compile OpenCV
-cd ~/opencv-4.1.0/
+cd ~/opencv-$version/
 if [ build ]; then
     rm -rf build
 fi
@@ -42,7 +43,7 @@ cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE /
  -D CMAKE_INSTALL_PREFIX=/usr/local /
  -D INSTALL_PYTHON_EXAMPLES=ON /
- -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-4.1.0/modules /
+ -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-$version/modules /
  -D BUILD_EXAMPLES=ON ..
 
 # Build OPENCV
@@ -52,4 +53,4 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE /
 #sudo make install
 #sudo ldconfig
 
-echo "Install of OpenCV 4.1.0 successful - Please reboot the system!"
+echo "Install of OpenCV $version successful - Please reboot the system!"
