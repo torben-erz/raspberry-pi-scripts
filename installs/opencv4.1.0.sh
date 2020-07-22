@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Version
+version="4.1.0"
+
 # System update
 sudo apt-get update
 sudo apt-get upgrade
@@ -19,8 +22,7 @@ wget https://raw.githubusercontent.com/torben-erz/raspberry-pi-scripts/master/in
 sh python3.sh
 rm python3.sh
 
-# Get OpenCV 4.1.0 source code
-version="4.1.0"
+# Get OpenCV source code
 wget https://github.com/opencv/opencv/archive/$version.zip -O opencv.zip
 if [ opencv-$version ]; then
     rm -rf opencv-$version
