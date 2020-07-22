@@ -12,8 +12,10 @@ echo ""
 echo "================================"
 echo "Preparing system for installation ..."
 
-sudo apt-get -y update
-sudo apt-get -y upgrade
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade --fix-missing -y
+sudo apt autoremove
 
 echo ""
 echo "Complete"
