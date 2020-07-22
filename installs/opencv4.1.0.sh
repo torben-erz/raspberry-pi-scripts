@@ -38,16 +38,22 @@ rm python3.sh
 
 # Get OpenCV 4.1.0 source code
 wget https://github.com/opencv/opencv/archive/4.1.0.zip -O opencv.zip
+if [ opencv-4.1.0 ]; then
+    rm -rf opencv-4.1.0
+fi
 unzip opencv.zip
 rm opencv.zip
 wget https://github.com/opencv/opencv_contrib/archive/4.1.0.zip -O opencv_contrib.zip
+if [ opencv_contrib-4.1.0 ]; then
+    rm -rf opencv_contrib-4.1.0
+fi
 unzip opencv_contrib.zip
 rm opencv_contrib.zip
 
 # Compile OpenCV
 cd ~/opencv-4.1.0/
 create_clean_directory build -d
-#cd build
+cd build
 #cmake -D CMAKE_BUILD_TYPE=RELEASE /
 # -D CMAKE_INSTALL_PREFIX=/usr/local /
 # -D INSTALL_PYTHON_EXAMPLES=ON /
