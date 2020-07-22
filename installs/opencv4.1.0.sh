@@ -17,9 +17,12 @@ wget https://raw.githubusercontent.com/torben-erz/raspberry-pi-scripts/master/in
 sh python3.sh
 
 # Get OpenCV 4.1.0 source code
-wget -O opencv.zip https://github.com/opencv/opencv/archive/4.1.0.zip
+wget https://github.com/opencv/opencv/archive/4.1.0.zip -O opencv.zip
 unzip opencv.zip
-wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.1.0.zip
+wget https://github.com/opencv/opencv_contrib/archive/4.1.0.zip -O opencv_contrib.zip
 unzip opencv_contrib.zip
 
 # Compile OpenCV
+cd ~/opencv-4.1.0/
+mkdir build
+cd build
