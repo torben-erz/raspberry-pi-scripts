@@ -12,9 +12,14 @@ sudo apt-get install libxvidcore-dev libx264-dev -y
 sudo apt-get install libgtk2.0-dev libgtk-3-dev -y
 sudo apt-get install libatlas-base-dev gfortran -y
 
-# Install Paython3 and pip3
+# Install Paython3, pip3 and numpy
 wget https://raw.githubusercontent.com/torben-erz/raspberry-pi-scripts/master/installs/python3.sh
 sh python3.sh
 
 # Get OpenCV 4.1.0 source code
-#sudo apt-get
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.1.0.zip
+unzip opencv.zip
+wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.1.0.zip
+unzip opencv_contrib.zip
+
+# Compile OpenCV
