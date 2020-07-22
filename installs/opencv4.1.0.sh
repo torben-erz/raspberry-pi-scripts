@@ -1,3 +1,22 @@
+#
+create_clean_directory(){
+    dir_name=$1
+    if [ -d "$dir_name" ]; then
+        echo "Removing $dir_name"
+        rm -rf "$dir_name"
+    elif [ -f "$dir_name" ]; then
+        echo "File with this name already exists, not a directory."
+        exit
+    fi
+    if mkdir "$dir_name"; then
+        echo "Clean directory created: $dir_name"
+        return 0
+    else
+        echo "Creating directory failed: $dir_name"
+        return 1
+    fi 
+}
+
 # System update
 sudo apt-get update
 sudo apt-get upgrade
@@ -27,19 +46,19 @@ rm opencv_contrib.zip
 
 # Compile OpenCV
 cd ~/opencv-4.1.0/
-mkdir build
-cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE /
- -D CMAKE_INSTALL_PREFIX=/usr/local
- -D INSTALL_PYTHON_EXAMPLES=ON /
- -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-4.1.0/modules /
- -D BUILD_EXAMPLES=ON ..
+create_clean_directory build -d
+#cd build
+#cmake -D CMAKE_BUILD_TYPE=RELEASE /
+# -D CMAKE_INSTALL_PREFIX=/usr/local /
+# -D INSTALL_PYTHON_EXAMPLES=ON /
+# -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-4.1.0/modules /
+# -D BUILD_EXAMPLES=ON ..
 
 # Build OPENCV
-make -j4
+#make -j4
 
 # Install OpenCV
-sudo maje install
-sudo ldconfig
+#sudo make install
+#sudo ldconfig
 
 echo "Install of OpenCV 4.1.0 successful - Please reboot the system!"
