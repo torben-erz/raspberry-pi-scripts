@@ -39,6 +39,7 @@ cd ~/opencv-$version/
 if [ build ]; then
     rm -rf build
 fi
+mkdir build
 cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE /
  -D CMAKE_INSTALL_PREFIX=/usr/local /
