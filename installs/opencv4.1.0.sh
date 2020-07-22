@@ -50,10 +50,10 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
  -D BUILD_EXAMPLES=ON ..
 
 # Build OPENCV
-#make -j4
+make -j4
 
 # Install OpenCV
-#sudo make install
-#sudo ldconfig
+sudo make install
+sudo ldconfig
 
 echo "Install of OpenCV $version successful - Please reboot the system!"
