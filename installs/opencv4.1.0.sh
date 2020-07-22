@@ -1,3 +1,9 @@
+# System update
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade --fix-missing -y
+sudo apt autoremove
+
 # Install tools and libraries for OpenCV
 sudo apt-get install build-essential cmake pkg-config -y
 sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev -y
@@ -11,4 +17,4 @@ wget https://raw.githubusercontent.com/torben-erz/raspberry-pi-scripts/master/in
 sh python3.sh
 
 # Get OpenCV 4.1.0 source code
-sudo apt-get
+#sudo apt-get
