@@ -2,7 +2,7 @@
 
 echo ""
 echo "================================"
-echo "Welcome to Installation Script for Raspbian"
+echo "Welcome to 1.54inch LCD Installation Script for Raspbian"
 echo "Maintained by Torben Daniel Erz (torben.erz@gmail.com)"
 
 
