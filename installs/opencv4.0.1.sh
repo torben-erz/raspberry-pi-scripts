@@ -1,6 +1,16 @@
+#!/bin/bash
 
+# Version
+version="4.0.1.24"
 
+# System update
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade --fix-missing -y
+sudo apt autoremove
 
+# Install tools and libraries for OpenCV
 sudo apt-get -y install libhdf5-dev libhdf5-serial-dev libatlas-base-dev libjasper-dev libqtgui4 libqt4-test
 
-pip3 install opencv-python==4.0.1.24
+# Install OpenCV
+pip3 install opencv-python==$version
