@@ -7,7 +7,7 @@ echo "================================"
 echo "Installing pigpio library ..."
 rm pigpio-master
 wget https://github.com/joan2937/pigpio/archive/master.zip -O master.zip
-unzip master.zip -O
+unzip -o master.zip
 rm master.zip
 cd pigpio-master
 make
