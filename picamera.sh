@@ -21,7 +21,7 @@ echo ""
 # Step 2: Install PiCamera
 echo ""
 echo "================================"
-echo "Installing pigpio"
+echo "Installing PiCamera for Python 3"
 sudo apt-get -y install python-picamera python3-picamera
 
 echo ""
