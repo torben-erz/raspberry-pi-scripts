@@ -9,4 +9,4 @@ echo "The installation of PiCamera was successful"
 echo ""
 echo "ATTENTION: Please activate the camera interface in the Raspberry Pi settings!!!"
 echo "TESTING: Enter the following in the command line: raspistill -o sample.jpg"
-sleep 5
+sleep 3
